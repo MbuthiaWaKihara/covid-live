@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.js": "/react-tutorial/static/js/main.5b5652c7.chunk.js",
-    "main.js.map": "/react-tutorial/static/js/main.5b5652c7.chunk.js.map",
-    "runtime-main.js": "/react-tutorial/static/js/runtime-main.b13738ed.js",
-    "runtime-main.js.map": "/react-tutorial/static/js/runtime-main.b13738ed.js.map",
-    "static/css/2.4cac4a78.chunk.css": "/react-tutorial/static/css/2.4cac4a78.chunk.css",
-    "static/js/2.4390c121.chunk.js": "/react-tutorial/static/js/2.4390c121.chunk.js",
-    "static/js/2.4390c121.chunk.js.map": "/react-tutorial/static/js/2.4390c121.chunk.js.map",
-    "index.html": "/react-tutorial/index.html",
-    "precache-manifest.e2644f6bfe7adc7a0cbb91f79284ebe5.js": "/react-tutorial/precache-manifest.e2644f6bfe7adc7a0cbb91f79284ebe5.js",
-    "service-worker.js": "/react-tutorial/service-worker.js",
-    "static/css/2.4cac4a78.chunk.css.map": "/react-tutorial/static/css/2.4cac4a78.chunk.css.map",
-    "static/js/2.4390c121.chunk.js.LICENSE.txt": "/react-tutorial/static/js/2.4390c121.chunk.js.LICENSE.txt",
-    "static/media/world.gif": "/react-tutorial/static/media/world.263dad67.gif"
+    "main.js": "/covid-live/static/js/main.5b5652c7.chunk.js",
+    "main.js.map": "/covid-live/static/js/main.5b5652c7.chunk.js.map",
+    "runtime-main.js": "/covid-live/static/js/runtime-main.75734cb9.js",
+    "runtime-main.js.map": "/covid-live/static/js/runtime-main.75734cb9.js.map",
+    "static/css/2.4cac4a78.chunk.css": "/covid-live/static/css/2.4cac4a78.chunk.css",
+    "static/js/2.e7c7634e.chunk.js": "/covid-live/static/js/2.e7c7634e.chunk.js",
+    "static/js/2.e7c7634e.chunk.js.map": "/covid-live/static/js/2.e7c7634e.chunk.js.map",
+    "index.html": "/covid-live/index.html",
+    "precache-manifest.31601a2001d88ed0afcc7923be965f2e.js": "/covid-live/precache-manifest.31601a2001d88ed0afcc7923be965f2e.js",
+    "service-worker.js": "/covid-live/service-worker.js",
+    "static/css/2.4cac4a78.chunk.css.map": "/covid-live/static/css/2.4cac4a78.chunk.css.map",
+    "static/js/2.e7c7634e.chunk.js.LICENSE.txt": "/covid-live/static/js/2.e7c7634e.chunk.js.LICENSE.txt",
+    "static/media/world.gif": "/covid-live/static/media/world.263dad67.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.b13738ed.js",
+    "static/js/runtime-main.75734cb9.js",
     "static/css/2.4cac4a78.chunk.css",
-    "static/js/2.4390c121.chunk.js",
+    "static/js/2.e7c7634e.chunk.js",
     "static/js/main.5b5652c7.chunk.js"
   ]
 }

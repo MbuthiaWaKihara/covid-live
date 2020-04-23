@@ -17,7 +17,7 @@ const SearchCountry = ({countriesState, currentCountry, setCurrentCountry, searc
         setSearchText(newSearchText);
         countriesState.countriesData.forEach(
             (country, countryIndex) => {
-                if(country.country === newSearchText){
+                if(country.country === newSearchText.trim()){
                     setCurrentCountry(country);
                 }
             }

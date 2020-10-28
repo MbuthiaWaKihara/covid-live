@@ -53,7 +53,7 @@ const WorldScreen = (props) => {
                         placement="top" trigger="hover" speaker={tipMessage(props.countriesState.countriesData[flagIndex].country)}
                         >
                         <div style={flagStyle}>
-                        <Link to={`/covid-live/${props.countriesState.countriesData[flagIndex].country}`}>
+                        <Link to={`/${props.countriesState.countriesData[flagIndex].country}`}>
                         <img src={flag} alt={`${props.countriesState.countriesData[flagIndex].country}'s flag`} style={{width: '90%', height: '90%', margin: 'auto'}}/>
                         </Link>
                         </div>

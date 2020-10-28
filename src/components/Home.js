@@ -33,8 +33,7 @@ const Home = (props) => {
     const [showSearch, setShowSearch] = React.useState(false);
 
     React.useEffect(() => {
-        props.fetchCountries();
-        
+        props.fetchCountries();        
     }, []);
 
     React.useEffect(() => {

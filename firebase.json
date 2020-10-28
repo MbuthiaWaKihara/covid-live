@@ -1,0 +1,11 @@
+{
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "hosting": [ {
+    "target": "english", 
+    "public": "dist/myapp"
+
+  }
+]
+}

@@ -61,7 +61,7 @@ const Country = ({match, countryState, fetchCountry}) => {
     const title = {
         display: 'flex',
         flexDirection: 'row',
-        height: '40%',
+        height: '30%',
     }
     
     const body = {
@@ -69,7 +69,7 @@ const Country = ({match, countryState, fetchCountry}) => {
         flexDirection: 'row',
         flexWrap: 'wrap',
         width: '100%',
-        height: '45%',
+        height: '55%',
         marginTop: '10px',
         marginBottom: '5px',
     }
@@ -169,7 +169,7 @@ const Country = ({match, countryState, fetchCountry}) => {
                     </>
                 }
                 <Link 
-                to="/covid-live"
+                to="/"
                 style={{
                     position: 'absolute',
                     bottom: 0,

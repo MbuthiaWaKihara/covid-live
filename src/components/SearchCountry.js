@@ -4,15 +4,24 @@ import {
     InputGroup,
     Icon,
     Button,
+    SelectPicker,
 } from 'rsuite';
 import axios from 'axios';
 import { ScreenContext } from './App';
+import alphasort from 'alpha-sort';
 
-const SearchCountry = ({countriesState, currentCountry, setCurrentCountry, searchText, setSearchText, setShowSearch}) => {
+const SearchCountry = ({countriesState, currentCountry, setCurrentCountry, searchText, setSearchText, setShowSearch, countries}) => {
 
     const smallScreen = React.useContext(ScreenContext);
+    const countriesList = countriesState.countriesData.map(country => country.country);
+    const sortedCountries = countriesList.sort(alphasort.ascending);
+    const data = sortedCountries.map((country, index) => ({
+        value: country,
+        label: country,
+    }));
 
     const searchForCountry = newSearchText => {
+        if(!newSearchText) newSearchText = '';
         setCurrentCountry(null);
         setSearchText(newSearchText);
         countriesState.countriesData.forEach(
@@ -24,11 +33,9 @@ const SearchCountry = ({countriesState, currentCountry, setCurrentCountry, searc
         );
     }
 
-    const showThisCountry = () => {
-
-        axios
-        .get('https://ipapi.co/json/')
-        .then(response => {
+    const showThisCountry = async () => {
+        try {
+            const response = await axios.get('https://ipapi.co/json/');
             let countryName = response.data.country_name;
             let countryCode = response.data.country_code;
             let countryCode3 = response.data.country_code_iso3
@@ -43,12 +50,10 @@ const SearchCountry = ({countriesState, currentCountry, setCurrentCountry, searc
                         setSearchText(`${country.country}`)
                     }
                 }
-            )
-        })
-        .catch(error => {
+            );
+        } catch (error) {
             console.log(error);
-        })
-        .finally();
+        }
     }
 
     const container = {
@@ -96,10 +101,15 @@ const SearchCountry = ({countriesState, currentCountry, setCurrentCountry, searc
                         :
                         <>
                         <InputGroup inside style={styles}>
-                        <Input 
+                        {/* <Input 
                         placeholder="Search by country name eg Kenya"
                         value={searchText}
                         onChange={value => searchForCountry(value)}
+                        /> */}
+                        <SelectPicker 
+                        block 
+                        data={data}
+                        onChange={text => searchForCountry(text)}
                         />
                         <InputGroup.Button>
                             <Icon icon="search" />
@@ -129,9 +139,9 @@ const SearchCountry = ({countriesState, currentCountry, setCurrentCountry, searc
                     </> :
                     <>
                     <Button appearance="subtle" style={{width: '100%'}} onClick={showThisCountry}>Show This Country</Button>
-                    <h2 style={text}>No results found</h2>
-                    <p>Ensure you capitalize first letter eg Uganda</p>
-                    <p>Avoid dots in abbreviations eg USA</p>
+                    <h2 style={text}>No country selected</h2>
+                    <p>Countries are ordered alphabetically</p>
+                    <p>Search for a country inside our menu</p>
                     </>
                 }
                 </div>

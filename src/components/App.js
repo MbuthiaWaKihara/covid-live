@@ -10,7 +10,7 @@ import Country from './Country';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Route,
     Switch,
 } from 'react-router-dom'
@@ -62,7 +62,7 @@ const App = () => {
     return (
         <>
             <ScreenContext.Provider value={smallScreen}>
-            <Router>
+            <Router basename="/">
             <Provider store={store}>
             <Container
             style={container}
@@ -76,8 +76,8 @@ const App = () => {
             style={content}
             >
                 <Switch>
-                    <Route path="/covid-live" exact render={(props) => <Home {...props}/>}/>
-                    <Route path="/covid-live/:country" exact render={(props) => <Country {...props}/>}/>
+                    <Route path="/" exact render={(props) => <Home {...props}/>}/>
+                    <Route path="/:country" exact render={(props) => <Country {...props}/>}/>
                 </Switch>
             </Content>
             </Container>

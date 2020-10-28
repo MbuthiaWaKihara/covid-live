@@ -126,12 +126,12 @@ const Home = (props) => {
                     style={searchbar}
                     >
                         <InputGroup inside style={styles}>
-                        <Input 
+                        {/* <Input 
                         placeholder="Search by country name eg Kenya"
                         value={searchText}
                         onChange={value => searchForCountry(value)}
                         onFocus={() => setShowSearch(true)}
-                        />
+                        /> */}
                         <SelectPicker 
                         block 
                         data={data}

@@ -3,6 +3,7 @@ import {
     Input,
     InputGroup,
     Icon,
+    SelectPicker,
 } from 'rsuite';
 import WorldInfo from './WorldInfo';
 import WorldScreen from './WorldScreen';
@@ -12,6 +13,7 @@ import {
 } from '../redux';
 import { connect } from 'react-redux';
 import { ScreenContext } from './App';
+import alphasort from 'alpha-sort';
 
 const mapStateToProps = state => {
     return({
@@ -52,6 +54,7 @@ const Home = (props) => {
     const [searchText, setSearchText] = React.useState(``);
 
     const searchForCountry = newSearchText => {
+        if(!newSearchText) newSearchText = '';
         setCurrentCountry(null);
         setSearchText(newSearchText);
         props.countriesState.countriesData.forEach(
@@ -62,6 +65,13 @@ const Home = (props) => {
             }
         );
     }
+
+    const countriesList = props.countriesState.countriesData.map(country => country.country);
+    const sortedCountries = countriesList.sort(alphasort.ascending);
+    const data = sortedCountries.map((country, index) => ({
+        value: country,
+        label: country,
+    }));
 
     const smallScreen = React.useContext(ScreenContext);
 
@@ -121,6 +131,12 @@ const Home = (props) => {
                         value={searchText}
                         onChange={value => searchForCountry(value)}
                         onFocus={() => setShowSearch(true)}
+                        />
+                        <SelectPicker 
+                        block 
+                        data={data}
+                        onFocus={() => setShowSearch(true)}
+                        onChange={text => searchForCountry(text)}
                         />
                         <InputGroup.Button>
                             <Icon icon="search" />
